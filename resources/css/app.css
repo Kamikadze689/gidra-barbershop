@@ -1,0 +1,592 @@
+@import 'captcha.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    letter-spacing: 0.08em;
+    background-color: #0a0a0a;
+}
+
+
+
+h1, h2, h3 {
+    letter-spacing: 0.15em;
+}
+
+
+.glow:hover {
+    box-shadow: 0 0 20px rgba(66, 66, 66, 0.2);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+::selection {
+    background: white;
+    color: black;
+}
+
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    background-color: transparent;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #0e0e0e;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #444;
+}
+
+
+button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #464646;
+    color: #000;
+}
+
+
+[x-show] {
+    display: block;
+}
+
+
+.reviews-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.reviews-track {
+    display: flex;
+    gap: 1.5rem;
+    width: fit-content;
+    will-change: transform;
+}
+
+.review-card {
+    flex: 0 0 auto;
+    width: 320px;
+    height: 320px;
+    padding: 1.5rem;
+    background-color: #0f0f0f;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.review-content {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 0.5rem;
+    color: #d1d5db;
+}
+
+.review-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.client-info {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.client-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.client-date {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+
+@media (max-width: 768px) {
+    .reviews-container {
+        mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+    }
+    
+    .review-card {
+        width: 280px;
+        height: 280px;
+        padding: 1rem;
+    }
+    
+    .review-text {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-card {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.animate-slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+
+#header-logo {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#main-header {
+    transition: background-color 0.3s ease;
+}
+
+
+.hero-logo-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .max-w-7xl {
+        max-width: 95%;
+    }
+    
+    .max-w-5xl {
+        max-width: 95%;
+    }
+    
+    .max-w-4xl {
+        max-width: 90%;
+    }
+    
+    .max-w-6xl {
+        max-width: 95%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    
+    .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .py-32 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    
+    .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+        font-size: 2.5rem;
+    }
+    
+    h1.text-6xl {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+    }
+    
+    h2.text-5xl {
+        font-size: 2rem;
+    }
+    
+    .text-4xl {
+        font-size: 1.8rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+    
+    
+    #hero .hero-logo-container img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .w-64 {
+        width: 120px !important;
+    }
+    
+    .h-64 {
+        height: 120px !important;
+    }
+    
+    #hero .text-lg {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+    
+    
+    #masters .grid {
+        gap: 1.5rem;
+    }
+    
+    #masters .w-full {
+        height: 380px;
+    }
+    
+    .review-card {
+        width: 260px !important;
+        min-width: 260px !important;
+        height: 280px !important;
+        padding: 0.75rem !important;
+    }
+    
+    .review-text {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 6;
+    }
+    
+    
+    .max-w-\[95\%\] {
+        max-width: 100%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    table {
+        font-size: 0.75rem;
+    }
+    
+    .px-6, .px-8 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .py-5, .py-6 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    
+    .mb-6 .flex.gap-3 {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #searchInput {
+        width: 100%;
+    }
+    
+    select {
+        width: 100%;
+    }
+    
+    
+    #booking-form .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #booking-form .flex.gap-10 {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    #date-picker {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+    
+    #date-picker > div {
+        padding: 0.5rem;
+    }
+    
+    #date-picker .text-2xl {
+        font-size: 1.1rem;
+    }
+    
+    #time-slots {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    #time-slots button {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    
+    .service-card {
+        padding: 1rem !important;
+    }
+    
+    .service-card .text-lg {
+        font-size: 0.95rem;
+    }
+    
+    
+    .px-10 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .py-7 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .py-6 {
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+    }
+    
+    
+    .grid-cols-1.md\:grid-cols-3 {
+        gap: 1rem;
+    }
+    
+    [class*="bg-[#111]"] .p-10 {
+        padding: 1.5rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.3rem;
+    }
+    
+    
+    #contacts .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #map {
+        height: 250px;
+        filter: brightness(0.55) grayscale(0.3) contrast(1.2);
+    }
+    
+    
+    
+    .captcha-wrapper {
+        transform: scale(0.85);
+        margin: -0.5rem 0;
+    }
+    
+    
+    .fixed.top-24 {
+        top: 5rem;
+        width: calc(100% - 2rem);
+        left: 1rem;
+        right: 1rem;
+        transform: none;
+    }
+    
+    .fixed.top-24.left-1\/2 {
+        left: 1rem;
+        right: 1rem;
+        transform: none;
+        width: auto;
+        max-width: none;
+    }
+    
+    
+    header .space-x-8 {
+        gap: 1rem;
+    }
+    
+    header .text-sm {
+        font-size: 0.7rem;
+    }
+    
+    
+    footer .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+    
+    footer .md\:text-right {
+        text-align: left;
+    }
+    
+    footer .md\:self-end {
+        align-self: flex-start;
+    }
+}
+
+
+@media (max-width: 480px) {
+    #date-picker {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    #time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+        font-size: 1.8rem;
+    }
+    
+    h1.text-6xl {
+        font-size: 1.6rem;
+    }
+    
+    .review-card {
+        width: 220px !important;
+        min-width: 220px !important;
+        height: 260px !important;
+    }
+    
+    .review-text {
+        font-size: 0.7rem;
+    }
+    
+    .client-name {
+        font-size: 0.8rem;
+    }
+    
+    .client-date {
+        font-size: 0.65rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    [class*="bg-[#111]"] .rounded-3xl,
+    .rounded-3xl[class*="bg-[#111]"] {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    [class*="bg-[#111]"] table {
+        min-width: 700px;
+    }
+}
+
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.table-wrapper table {
+    min-width: 900px;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .table-wrapper table {
+        min-width: 700px;
+    }
+}
+
+
+
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.table-wrapper table {
+    min-width: 800px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+
+@media (max-width: 640px) {
+    .table-wrapper table {
+        min-width: 700px;
+    }
+}
+
+
+.table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}

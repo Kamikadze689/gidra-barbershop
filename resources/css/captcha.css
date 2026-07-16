@@ -1,0 +1,43 @@
+
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    transform: scale(0.95);
+    transform-origin: center;
+}
+
+
+.captcha-wrapper {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.captcha-wrapper:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+
+.g-recaptcha iframe {
+    filter: brightness(0.95) contrast(1.1);
+}
+
+
+.captcha-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+}
+
+.captcha-hint::before {
+    content: "🔒 ";
+    font-size: 10px;
+}
